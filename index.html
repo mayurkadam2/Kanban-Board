@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanBan board</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main class="flex-vertical">
+        <nav class="flex">
+            <div class="left">
+                <h1>Kanban Board</h1>
+            </div>
+            <div class="right">
+                <button><i class="fa-solid fa-plus"></i> Add New Task</button>
+            </div>
+        </nav>
+        <section class="board flex">
+            <div class="task-column  flex-vertical">
+                <div class="heading flex">
+                    <div class="left">TODO</div>
+                    <div class="right">count</div>
+                </div>
+                <div draggable="true" class="task">
+                    <h2>Task Title</h2>
+                    <p>Task Descrition</p>
+                    <button><i class="fa-solid fa-trash"></i> Delete</button>
+                </div>
+                <div class="task">
+                    <h2>Task Title</h2>
+                    <p>Task Descrition</p>
+                    <button>Delete</button>
+                </div>
+            </div>
+            <div class="task-column hover-over flex-vertical">
+                <div class="heading flex">
+                    <div class="left">IN Progress</div>
+                    <div class="right">count</div>
+                </div>
+            </div>
+            <div class="task-column flex-vertical">
+                <div class="heading flex">
+                    <div class="left">Done</div>
+                    <div class="right">count</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
