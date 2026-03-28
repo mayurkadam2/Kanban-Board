@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KanBan board</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -20,7 +22,7 @@
             </div>
         </nav>
         <section class="board flex">
-            <div class="task-column  flex-vertical">
+            <div id="todo" class="task-column  flex-vertical">
                 <div class="heading flex">
                     <div class="left">TODO</div>
                     <div class="right">count</div>
@@ -30,19 +32,28 @@
                     <p>Task Descrition</p>
                     <button><i class="fa-solid fa-trash"></i> Delete</button>
                 </div>
-                <div class="task">
-                    <h2>Task Title</h2>
+
+
+                <!-- sample task -->
+                <div draggable="true" class="task">
+                    <h2>Task Title 2</h2>
                     <p>Task Descrition</p>
-                    <button>Delete</button>
+                    <button><i class="fa-solid fa-trash"></i> Delete</button>
                 </div>
+                <div draggable="true" class="task">
+                    <h2>Task Title 3</h2>
+                    <p>Task Descrition</p>
+                    <button><i class="fa-solid fa-trash"></i> Delete</button>
+                </div>
+
             </div>
-            <div class="task-column hover-over flex-vertical">
+            <div id="progress" class="task-column flex-vertical">
                 <div class="heading flex">
                     <div class="left">IN Progress</div>
                     <div class="right">count</div>
                 </div>
             </div>
-            <div class="task-column flex-vertical">
+            <div id="done" class="task-column flex-vertical">
                 <div class="heading flex">
                     <div class="left">Done</div>
                     <div class="right">count</div>
@@ -51,6 +62,22 @@
         </section>
     </main>
 
+    <div class="modal add-new-task flex-vertical">
+        <div class="bg">
+
+        </div>
+        <div class="center">
+            <div id="close-modal" class="close">
+                <button id="close-button"><i class="fa-regular fa-circle-xmark"></i></button>
+                
+            </div>
+            <input type="text" placeholder="Task Title">
+            
+            <textarea name="" id="" placeholder="Task Description"></textarea>
+            
+            <button id="add-new-task" class="add-task-btn" type="submit">Add Task</button>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 

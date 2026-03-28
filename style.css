@@ -10,6 +10,10 @@
     --bg-secondary-color:rgb(25, 25, 25);
     --bg-tertiary-color:rgb(54, 54, 54);
 
+    --bg-add-new-task-modal:#d6f9eb;
+    --border-add-new-task-modal:#004b2d;
+    --bg-add-new-task-input:#8ddcbc;
+
     --bg-delete-color:rgb(255, 160, 160);
     --delete-border:rgb(122, 0, 0);
     --delete-text-color:rgb(82, 0, 0);
@@ -77,6 +81,8 @@ section .task-column{
     background-color: var(--bg-secondary-color);
     padding: var(--space-xl);
     border-radius: var(--outer-radius);
+
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 section .task-column .heading{
@@ -85,11 +91,11 @@ section .task-column .heading{
  margin-bottom: var(--space-xl);
 }
 
-section .task-column.hover-over:hover{
+section .task-column.hover-over{
     border: 2px dashed var(--text-primary-color);
-    scale: 1.05;
+    scale: 1.03;
 
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
 }
 
 section .task-column .task{
@@ -116,4 +122,95 @@ section .task-column .task button{
     font-weight: bold;
     
     
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .center{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+    color: var(--bg-secondary-color);
+    background-color: var(--bg-add-new-task-modal);
+    border: 2px solid var(--border-add-new-task-modal);
+    padding: var(--space-xl);
+    border-radius: var(--outer-radius);
+
+    position: relative;
+}
+
+.modal .center input, .modal .center textarea{
+    background-color: var(--bg-add-new-task-input);
+    border: none;
+    outline: none;
+    border-radius: var(--space-sm);
+    padding: var(--space-m);
+    color: var(--bg-color);
+    font-weight: bold;
+}
+
+.modal .center input:hover, .modal .center textarea:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 0px var(--bg-secondary-color);
+}
+
+.modal .center button{
+    background-color: var(--border-add-new-task-modal);
+    color: var(--text-primary-color);
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.modal .center button:hover{
+    
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 0px var(--bg-secondary-color);
+
+}   
+
+.modal .center button:active{
+   
+    transform: translateY(5px);
+     box-shadow: 0px 0px 0px var(--border-add-new-task-modal);
+}
+
+#close-modal{
+    position: absolute;
+    right: -1rem;
+    top: -1.5rem;
+    column-rule: var(--bg-delete-color);
+    font-size: 30px;
+}
+
+#close-modal button{
+    padding: 0;
+    background-color: var(--bg-delete-color);
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;;
+}
+
+#close-modal button:hover{
+    
+    transform: translateY(0px);
+    box-shadow: 0px 0px 0px var(--bg-secondary-color);
+
+}   
+
+#close-modal button:active{
+   
+    transform: translateY(0px);
+     box-shadow: 0px 0px 0px var(--border-add-new-task-modal);
 }
