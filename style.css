@@ -7,6 +7,7 @@
 
 :root{
     --bg-color:rgb(11, 11, 11);
+    /* --bg-color:rgb(205, 205, 205); */
     --bg-secondary-color:rgb(25, 25, 25);
     --bg-tertiary-color:rgb(54, 54, 54);
 
@@ -21,6 +22,8 @@
     --bg-button-color:rgb(20, 20, 20);
     --text-primary-color:rgb(247, 247, 247);
 
+    --text-dark-color:rgb(21, 21, 21);
+
     /* spaces */
     --space-sm:5px;
     --space-m:10px;
@@ -29,6 +32,35 @@
 
     /* inner radius = outer radius - padding */
     --outer-radius:10px;
+
+    /* chip bg */
+    --todo-chip:#D9D9D9;
+    --progress-chip:#A0B3C1;
+    --done-chip:#5DAF8E;
+
+    --todo-chip-border:#4B4B4B;
+    --progress-chip-border:#4B6F8E;
+    --done-chip-border:#3C5C3B;
+
+    /* Todo — neutral charcoal, subtle warm tint */
+--todo-gradient: linear-gradient(135deg, rgba(75, 75, 75, 0.80), rgba(40, 40, 40, 0.60));
+
+/* In Progress — steel blue, cooler and active-feeling */
+--progress-gradient: linear-gradient(135deg, rgba(70, 111, 142, 0.82), rgba(35, 65, 95, 0.62));
+
+/* Done — emerald green, confident and calm */
+--done-gradient: linear-gradient(135deg, rgba(61, 130, 100, 0.82), rgba(32, 85, 62, 0.62));
+
+
+/* ── Column Background Gradients ── */
+--todo-col-gradient: linear-gradient(180deg, #2e2e2e 0%, #1a1a1a 100%);
+--progress-col-gradient: linear-gradient(180deg, #1a3348 0%, #0e1f2e 100%);
+--done-col-gradient: linear-gradient(180deg, #193d2a 0%, #0d2118 100%);
+
+/* ── Column Borders ── */
+--todo-col-border: #6e6e6e;
+--progress-col-border: #4a8ab5;
+--done-col-border: #3dab72;
 }
 
 html,body{
@@ -60,6 +92,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     
+    
 }
 
 button{
@@ -78,10 +111,10 @@ section{
 
 section .task-column{
     flex-grow: 1;
-    background-color: var(--bg-secondary-color);
+    /* background-color: var(--bg-secondary-color); */
     padding: var(--space-xl);
     border-radius: var(--outer-radius);
-
+     box-shadow: 0 8px 32px rgba(189, 189, 189, 0.328);
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -99,7 +132,7 @@ section .task-column.hover-over{
 }
 
 section .task-column .task{
-    background-color: var(--bg-tertiary-color);
+    /* background-color: var(--bg-tertiary-color); */
     width: 100%;
 
 /* outer radius == 10px padding 20px */
@@ -133,6 +166,11 @@ section .task-column .task button{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
+}
+
+.modal.active{
+    display: flex;
 }
 
 .modal .center{
@@ -144,7 +182,8 @@ section .task-column .task button{
     border: 2px solid var(--border-add-new-task-modal);
     padding: var(--space-xl);
     border-radius: var(--outer-radius);
-
+    min-width: 400px;
+    /* height: 300px; */
     position: relative;
 }
 
@@ -156,10 +195,11 @@ section .task-column .task button{
     padding: var(--space-m);
     color: var(--bg-color);
     font-weight: bold;
+    font-size: medium;
 }
 
 .modal .center input:hover, .modal .center textarea:hover{
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     box-shadow: 0px 5px 0px var(--bg-secondary-color);
 }
 
@@ -214,3 +254,71 @@ section .task-column .task button{
     transform: translateY(0px);
      box-shadow: 0px 0px 0px var(--border-add-new-task-modal);
 }
+
+.modal .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: rgba(8, 44, 0, 0.255);
+    backdrop-filter: blur(2px);
+}
+
+/* Chip Design */
+
+#todo .left , #progress .left, #done .left{
+    color: var(--text-dark-color);
+    font-size: 15px;
+    font-weight:600;
+    width: max-content;
+    height: 30px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+#todo .left{
+    border: 2px solid var(--todo-chip-border);
+    background-color:var(--todo-chip);
+}
+
+#progress .left{
+    border: 2px solid var(--progress-chip-border);
+    background-color:var(--progress-chip);
+}
+
+#done .left{
+    border: 2px solid var(--done-chip-border);
+    background-color:var(--done-chip);
+}
+
+#todo .task{
+    background: var(--todo-gradient);
+}
+
+#progress .task{
+    background: var(--progress-gradient);
+}
+
+#done .task{
+    background: var(--done-gradient);
+}
+
+#todo{
+    background-color: var(--todo-col-gradient);
+    border-color: var(--todo-col-border);
+}
+
+#progress{
+    background-color: var(--progress-col-gradient);
+    border-color: var(--progress-col-border);
+}   
+
+#done{
+    background-color: var(--done-col-gradient);
+    border-color: var(--done-col-border);
+}   

@@ -18,7 +18,7 @@
                 <h1>Kanban Board</h1>
             </div>
             <div class="right">
-                <button><i class="fa-solid fa-plus"></i> Add New Task</button>
+                <button class="toggle-modal"><i class="fa-solid fa-plus"></i> Add New Task</button>
             </div>
         </nav>
         <section class="board flex">
@@ -27,24 +27,11 @@
                     <div class="left">TODO</div>
                     <div class="right">count</div>
                 </div>
-                <div draggable="true" class="task">
-                    <h2>Task Title</h2>
-                    <p>Task Descrition</p>
+                <!-- <div draggable="true" class="task">
+                    <h2>Start Using Kanban</h2>
+                    <p>Use add new task button to create tasks</p>
                     <button><i class="fa-solid fa-trash"></i> Delete</button>
-                </div>
-
-
-                <!-- sample task -->
-                <div draggable="true" class="task">
-                    <h2>Task Title 2</h2>
-                    <p>Task Descrition</p>
-                    <button><i class="fa-solid fa-trash"></i> Delete</button>
-                </div>
-                <div draggable="true" class="task">
-                    <h2>Task Title 3</h2>
-                    <p>Task Descrition</p>
-                    <button><i class="fa-solid fa-trash"></i> Delete</button>
-                </div>
+                </div> -->
 
             </div>
             <div id="progress" class="task-column flex-vertical">
@@ -67,13 +54,13 @@
 
         </div>
         <div class="center">
-            <div id="close-modal" class="close">
+            <div id="close-modal" class="close toggle-modal">
                 <button id="close-button"><i class="fa-regular fa-circle-xmark"></i></button>
                 
             </div>
-            <input type="text" placeholder="Task Title">
+            <input id="task-title-input" type="text" placeholder="Task Title">
             
-            <textarea name="" id="" placeholder="Task Description"></textarea>
+            <textarea id="task-desc-input" name="" id="" placeholder="Task Description"></textarea>
             
             <button id="add-new-task" class="add-task-btn" type="submit">Add Task</button>
         </div>
