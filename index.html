@@ -15,12 +15,16 @@
     <main class="flex-vertical">
         <nav class="flex">
             <div class="left">
-                <h1>Kanban Board</h1>
+                <a href="#"> <img src="./assets/kanban-board Logo transparent.png" alt="Kanban-Board"></a>
+
             </div>
             <div class="right">
                 <button class="toggle-modal"><i class="fa-solid fa-plus"></i> Add New Task</button>
             </div>
         </nav>
+        <div class="progress-rail" id="progress-rail">
+            <div class="fill" id="fill"></div>
+        </div>
         <section class="board flex">
             <div id="todo" class="task-column  flex-vertical">
                 <div class="heading flex">
@@ -56,12 +60,12 @@
         <div class="center">
             <div id="close-modal" class="close toggle-modal">
                 <button id="close-button"><i class="fa-regular fa-circle-xmark"></i></button>
-                
+
             </div>
             <input id="task-title-input" type="text" placeholder="Task Title">
-            
+
             <textarea id="task-desc-input" name="" id="" placeholder="Task Description"></textarea>
-            
+
             <button id="add-new-task" class="add-task-btn" type="submit">Add Task</button>
         </div>
     </div>

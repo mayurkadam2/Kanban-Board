@@ -43,6 +43,22 @@ document.addEventListener('keydown', (e) => {
 }
 );
 
+const progressRail = document.querySelector('#progress-rail');
+const fill = document.querySelector('#fill');
+
+function progressBar(){
+    // fill.style.background = 'linear-gradient(270deg, rgb(0, 254, 0), rgb(0, 180, 0), green)';
+    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.8), rgba(141,220,188,0.7), rgba(0,75,45,0.6))';
+    fill.style.background = 'linear-gradient(270deg, rgba(0,254,0,0.7) 0%, rgba(0,180,0,0.6) 10%, rgba(0,75,45,0.5))20%';
+    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.9), rgba(141,220,188,0.6), rgba(0,128,0,0.5))';
+    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.5), rgba(141,220,188,0.4), rgba(0,75,45,0.3))';
+    fill.style.width = '100%';   
+    setTimeout(() =>{
+        fill.style.background = 'none';
+        fill.style.width = '0%';
+       
+    },500) 
+}
 
 
 //add task div
@@ -78,6 +94,7 @@ function addTask(taskTitle, taskDesc, column) {
     //delete task button functionality
     const deleteBtn = div.querySelector('button');
     deleteBtn.addEventListener("click", (e) => {
+        progressBar();
         div.remove();
         console.log("Task deleted");
         updateLocalStorage();
@@ -147,6 +164,7 @@ function addDragEventsOnColumn(column) {
 
     //handle drop event on column
     column.addEventListener('drop', (e) => {
+        progressBar();
         e.preventDefault();
         column.classList.remove("hover-over");
         // console.log("Which element was dragged:", draggedElement);
@@ -196,5 +214,5 @@ addNewTaskButton.addEventListener('click', (e) => {
 
     });
 
-
+    progressBar();
 });
