@@ -47,17 +47,15 @@ const progressRail = document.querySelector('#progress-rail');
 const fill = document.querySelector('#fill');
 
 function progressBar(){
-    // fill.style.background = 'linear-gradient(270deg, rgb(0, 254, 0), rgb(0, 180, 0), green)';
-    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.8), rgba(141,220,188,0.7), rgba(0,75,45,0.6))';
-    fill.style.background = 'linear-gradient(270deg, rgba(0,254,0,0.7) 0%, rgba(0,180,0,0.6) 10%, rgba(0,75,45,0.5))20%';
-    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.9), rgba(141,220,188,0.6), rgba(0,128,0,0.5))';
-    // fill.style.background = 'linear-gradient(270deg, rgba(214,249,235,0.5), rgba(141,220,188,0.4), rgba(0,75,45,0.3))';
+    fill.style.right = "auto";
+    fill.style.background = 'linear-gradient(270deg, rgba(0, 254, 0, 0.41), rgb(0, 180, 0))';
     fill.style.width = '100%';   
     setTimeout(() =>{
-        fill.style.background = 'none';
+        fill.style.background = 'linear-gradient(90deg,rgba(0, 254, 0, 0.42),rgb(0, 180, 0))';
+        fill.style.right = "0px";
         fill.style.width = '0%';
        
-    },500) 
+    },350) 
 }
 
 
